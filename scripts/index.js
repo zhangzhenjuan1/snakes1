@@ -48,7 +48,7 @@ window.onload=function(){
 		if(defaultDirection==UP){
 		    newhead={x:snake[last].x-1,y:snake[last].y};
 		}
-		if(newhead.x>9||newhead.x<0||newhead.y>9||newhead.y<0){
+		if(newhead.x>14||newhead.x<0||newhead.y>14||newhead.y<0){
 			
 			// alert('GAME OVER');
 			game[0].style.display='block';
