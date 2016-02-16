@@ -5,7 +5,52 @@
 	<title>javascript贪吃蛇</title>
 	<link rel="stylesheet" href="./stylesheets/index.css"/>
 	<script src="./scripts/index.js"></script>
-
+	<style type="text/css">
+		.sudu{
+				cursor:pointer;
+				margin: 50px auto;
+				font-family: Lato;
+				z-index: 2;
+				border: 2px solid rgb(14, 14, 124);
+				display: block;
+				padding: 15px;
+				position: relative;
+				width: 130px;
+				text-align: center;
+				overflow: hidden;
+			}
+			.sudu:after{
+				z-index: 0;
+				position: absolute;
+				content: '';
+				height: calc(1em + 40px);
+				top: -2px;
+				left: -2px;
+				margin-left: 100px;
+				width: 0px;
+				background: #1d1d1d;
+				transition: all 0.5s ease-in-out;
+				transform: skewX(10deg);
+			}
+			.sudu:hover::after{
+				position: absolute;
+				content: '';
+				height: calc(1em + 40px);
+				top: -2px;
+				left: -2px;
+				z-index: -1000;
+				margin-left: 100px;
+				width: 208px;
+				background: rgb(14, 14, 124);
+				margin-left: -2px;
+			}
+			.sudu span{
+				transition: all .4s ease-in-out;
+			}
+			.sudu:hover {
+				color: white;
+			}
+	</style>
 </head>
 <body>
 	<div class="tanchishe">
@@ -26,6 +71,11 @@
 		<div class="block" id="0_7"></div>
 		<div class="block" id="0_8"></div>
 		<div class="block" id="0_9"></div>
+		<div class="block" id="0_10"></div>
+		<div class="block" id="0_11"></div>
+		<div class="block" id="0_12"></div>
+		<div class="block" id="0_13"></div>
+		<div class="block" id="0_14"></div>
 
 		<div class="block" id="1_0"></div>
 		<div class="block" id="1_1"></div>
@@ -37,6 +87,11 @@
 		<div class="block" id="1_7"></div>
 		<div class="block" id="1_8"></div>
 		<div class="block" id="1_9"></div>
+		<div class="block" id="1_10"></div>
+		<div class="block" id="1_11"></div>
+		<div class="block" id="1_12"></div>
+		<div class="block" id="1_13"></div>
+		<div class="block" id="1_14"></div>
 
 		<div class="block" id="2_0"></div>
 		<div class="block" id="2_1"></div>
@@ -48,6 +103,12 @@
 		<div class="block" id="2_7"></div>
 		<div class="block" id="2_8"></div>
 		<div class="block" id="2_9"></div>
+		<div class="block" id="2_10"></div>
+		<div class="block" id="2_11"></div>
+		<div class="block" id="2_12"></div>
+		<div class="block" id="2_13"></div>
+		<div class="block" id="2_14"></div>
+
 
 		<div class="block" id="3_0"></div>
 		<div class="block" id="3_1"></div>
@@ -59,6 +120,11 @@
 		<div class="block" id="3_7"></div>
 		<div class="block" id="3_8"></div>
 		<div class="block" id="3_9"></div>
+		<div class="block" id="3_10"></div>
+		<div class="block" id="3_11"></div>
+		<div class="block" id="3_12"></div>
+		<div class="block" id="3_13"></div>
+		<div class="block" id="3_14"></div>
 
 		<div class="block" id="4_0"></div>
 		<div class="block" id="4_1"></div>
@@ -70,6 +136,11 @@
 		<div class="block" id="4_7"></div>
 		<div class="block" id="4_8"></div>
 		<div class="block" id="4_9"></div>
+		<div class="block" id="4_10"></div>
+		<div class="block" id="4_11"></div>
+		<div class="block" id="4_12"></div>
+		<div class="block" id="4_13"></div>
+		<div class="block" id="4_14"></div>
 
 		<div class="block" id="5_0"></div>
 		<div class="block" id="5_1"></div>
@@ -81,6 +152,11 @@
 		<div class="block" id="5_7"></div>
 		<div class="block" id="5_8"></div>
 		<div class="block" id="5_9"></div>
+		<div class="block" id="5_10"></div>
+		<div class="block" id="5_11"></div>
+		<div class="block" id="5_12"></div>
+		<div class="block" id="5_13"></div>
+		<div class="block" id="5_14"></div>
 
 		<div class="block" id="6_0"></div>
 		<div class="block" id="6_1"></div>
@@ -92,6 +168,11 @@
 		<div class="block" id="6_7"></div>
 		<div class="block" id="6_8"></div>
 		<div class="block" id="6_9"></div>
+		<div class="block" id="6_10"></div>
+		<div class="block" id="6_11"></div>
+		<div class="block" id="6_12"></div>
+		<div class="block" id="6_13"></div>
+		<div class="block" id="6_14"></div>
 
 		<div class="block" id="7_0"></div>
 		<div class="block" id="7_1"></div>
@@ -103,6 +184,11 @@
 		<div class="block" id="7_7"></div>
 		<div class="block" id="7_8"></div>
 		<div class="block" id="7_9"></div>
+		<div class="block" id="7_10"></div>
+		<div class="block" id="7_11"></div>
+		<div class="block" id="7_12"></div>
+		<div class="block" id="7_13"></div>
+		<div class="block" id="7_14"></div>
 
 		<div class="block" id="8_0"></div>
 		<div class="block" id="8_1"></div>
@@ -114,6 +200,11 @@
 		<div class="block" id="8_7"></div>
 		<div class="block" id="8_8"></div>
 		<div class="block" id="8_9"></div>
+		<div class="block" id="8_10"></div>
+		<div class="block" id="8_11"></div>
+		<div class="block" id="8_12"></div>
+		<div class="block" id="8_13"></div>
+		<div class="block" id="8_14"></div>
 
 		<div class="block" id="9_0"></div>
 		<div class="block" id="9_1"></div>
@@ -125,7 +216,91 @@
 		<div class="block" id="9_7"></div>
 		<div class="block" id="9_8"></div>
 		<div class="block" id="9_9"></div>
+		<div class="block" id="9_10"></div>
+		<div class="block" id="9_11"></div>
+		<div class="block" id="9_12"></div>
+		<div class="block" id="9_13"></div>
+		<div class="block" id="9_14"></div>
 
+		<div class="block" id="10_0"></div>
+		<div class="block" id="10_1"></div>
+		<div class="block" id="10_2"></div>
+		<div class="block" id="10_3"></div>
+		<div class="block" id="10_4"></div>
+		<div class="block" id="10_5"></div>
+		<div class="block" id="10_6"></div>
+		<div class="block" id="10_7"></div>
+		<div class="block" id="10_8"></div>
+		<div class="block" id="10_9"></div>
+		<div class="block" id="10_10"></div>
+		<div class="block" id="10_11"></div>
+		<div class="block" id="10_12"></div>
+		<div class="block" id="10_13"></div>
+		<div class="block" id="10_14"></div>
+
+		<div class="block" id="11_0"></div>
+		<div class="block" id="11_1"></div>
+		<div class="block" id="11_2"></div>
+		<div class="block" id="11_3"></div>
+		<div class="block" id="11_4"></div>
+		<div class="block" id="11_5"></div>
+		<div class="block" id="11_6"></div>
+		<div class="block" id="11_7"></div>
+		<div class="block" id="11_8"></div>
+		<div class="block" id="11_9"></div>
+		<div class="block" id="11_10"></div>
+		<div class="block" id="11_11"></div>
+		<div class="block" id="11_12"></div>
+		<div class="block" id="11_13"></div>
+		<div class="block" id="11_14"></div>
+
+		<div class="block" id="12_0"></div>
+		<div class="block" id="12_1"></div>
+		<div class="block" id="12_2"></div>
+		<div class="block" id="12_3"></div>
+		<div class="block" id="12_4"></div>
+		<div class="block" id="12_5"></div>
+		<div class="block" id="12_6"></div>
+		<div class="block" id="12_7"></div>
+		<div class="block" id="12_8"></div>
+		<div class="block" id="12_9"></div>
+		<div class="block" id="12_10"></div>
+		<div class="block" id="12_11"></div>
+		<div class="block" id="12_12"></div>
+		<div class="block" id="12_13"></div>
+		<div class="block" id="12_14"></div>
+
+		<div class="block" id="13_0"></div>
+		<div class="block" id="13_1"></div>
+		<div class="block" id="13_2"></div>
+		<div class="block" id="13_3"></div>
+		<div class="block" id="13_4"></div>
+		<div class="block" id="13_5"></div>
+		<div class="block" id="13_6"></div>
+		<div class="block" id="13_7"></div>
+		<div class="block" id="13_8"></div>
+		<div class="block" id="13_9"></div>
+		<div class="block" id="13_10"></div>
+		<div class="block" id="13_11"></div>
+		<div class="block" id="13_12"></div>
+		<div class="block" id="13_13"></div>
+		<div class="block" id="13_14"></div>
+
+		<div class="block" id="14_0"></div>
+		<div class="block" id="14_1"></div>
+		<div class="block" id="14_2"></div>
+		<div class="block" id="14_3"></div>
+		<div class="block" id="14_4"></div>
+		<div class="block" id="14_5"></div>
+		<div class="block" id="14_6"></div>
+		<div class="block" id="14_7"></div>
+		<div class="block" id="14_8"></div>
+		<div class="block" id="14_9"></div>
+		<div class="block" id="14_10"></div>
+		<div class="block" id="14_11"></div>
+		<div class="block" id="14_12"></div>
+		<div class="block" id="14_13"></div>
+		<div class="block" id="14_14"></div>
 
 
 	</div>
@@ -136,7 +311,7 @@
 	</div>
 	<div class="game">
 		<div id="gameover">GAME OVER</div>
-		<div class="cxks">重新开始</div>
+		<div class="sudu cxks" style="margin-top:10px">重新开始</div>
 	</div>
 
 
